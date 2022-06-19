@@ -1,0 +1,227 @@
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+@model IEnumerable<term2project.Models.Cars>
+
+@{
+    ViewData["Title"] = "Car Rental - Landing Page";
+}
+
+<style>
+
+footer{
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+}
+
+.center {
+    text-align: center;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+.carscolumn {
+    float: left;
+    width: 25%;
+    padding: 1%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+h1 {
+    text-align: center;
+    text-decoration:underline;
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    word-break: break-word;
+    text-align: center;
+}
+
+.column2 {
+    float: left;
+    width: 23%;
+    margin: 1%;
+}
+
+.row2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.img2 {
+    border-style: solid;
+    border-color: red;
+    border-radius: 50%;
+    animation-name: box;
+    animation-duration: 4s;
+}
+
+.img3 {
+    border-style: solid;
+    border-color: black;
+    border-radius: 10%;
+    width: 200px;
+    height: 200px;
+    animation-name: box;
+    animation-duration: 4s;
+}
+
+body {
+    background-image:url(https://cdn.discordapp.com/attachments/432342254770847745/986393049355669524/cars.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    /*i changed the background up a bit to make it less harsh on the white but you can change it if you want heres the original: https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_13/2798361/190325-rental-cars-cs-229p.jpg - felix*/
+}
+
+.box {
+    background-color: whitesmoke;
+    border-style: solid;
+    border-color: red;
+    padding: 20px;
+    border-radius: 2%;
+    animation-name: box;
+    animation-duration: 1s;
+}
+
+.carimg {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.nowrap {
+    display: inline-block;
+}
+
+@@-webkit-keyframes box {
+ from {opacity: 0;} 
+ to {opacity: 1;}
+}
+
+</style>
+
+
+<body>
+
+    <div class="box">
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Mc-Queen</h1>
+</div>
+
+<div class="row">
+    <h1>
+        About our cars
+    </h1>
+    <div class="column">
+        <p>
+            Each of our cars, whether it is a rental or a car you will be taking home to keep, are quality checked to the highest standards. We have recieve amazing feedback from our previous customers. Rent a car now for your adventure. Duis dignissim est at est pretium, et suscipit neque vehicula. Nam viverra nisi et accumsan ullamcorper. Pellentesque pharetra laoreet erat, vitae facilisis sem lobortis et. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Mauris facilisis vel nulla eu sagittis. Duis commodo nisi et erat scelerisque pretium. Maecenas dapibus lacinia ipsum, ut viverra tortor tristique consequat.
+        <p>
+             We have cars from many brands such as Toyota, Honda, Hyundai and many more. We at "Insert Company Name here" have great rates, friendly services and a wonderful environment. We have what YOU are Looking for. We have the transport to get to your destination. Aenean dictum magna in elit maximus, id semper tellus laoreet. Ut eget dictum nulla. Suspendisse potenti. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec ex leo, varius a aliquet et, rutrum eu lacus. Aliquam in erat nunc. Etiam vel sapien accumsan, ornare orci non, rutrum nulla. Nam fringilla, nisi ac sodales maximus, erat sapien ornare tellus, eu faucibus arcu mauris eget augue.
+        </p>
+        <p>
+           Take advantage of our extensive vehicle rental selection and book online by viewing our current car rental offers. Mc-Queen is the best place to book your car rental with great deals. In convallis ligula in ante aliquet rhoncus. Pellentesque luctus est sed condimentum viverra. Nullam lacinia massa mauris, ac auctor est bibendum eu. Nullam a eros eget enim feugiat efficitur et quis felis. Suspendisse sem enim, dictum id venenatis et, ultricies et leo. Maecenas quis felis et felis pharetra varius eu in nisl. Suspendisse ut eros dui. Vivamus id aliquam orci, sed auctor massa. Morbi et nunc congue nulla consectetur bibendum. Sed sagittis, turpis a venenatis venenatis, libero nunc feugiat mauris, vitae eleifend metus ligula sit amet felis.
+        </p>
+    </div>
+
+    <div class="column">
+        <div class="column">
+            <img class="img3" src="https://cdn.discordapp.com/attachments/432342254770847745/980756479571288114/istockphoto-1316556095-170667a.jpg" alt="stockimg1" style="width: 100%; margin: 1% 1% 1% 1%;">
+            <img class="img3" src="https://cdn.discordapp.com/attachments/432342254770847745/980756479952965712/unsold-cars-091218-1.jpg" alt="stockimg2" style="width: 100%; margin: 1% 1% 1% 1%;">
+            <img class="img3" src="https://cdn.discordapp.com/attachments/432342254770847745/980756480221380619/istockphoto-597261528-612x612.jpg" alt="stockimg3" style="width: 100%; margin: 1% 1% 1% 1%;">
+        </div>
+
+        <div class="column">
+            <img class="img3" src="https://cdn.discordapp.com/attachments/432342254770847745/980756480481460244/group-happy-car-sales-consultants-working-inside-vehicle-showroom-beautiful-149775145.jpg" alt="stockimg4" style="width: 100%; margin: 1% 3% 1% 3%;">
+            <img class="img3" src="https://cdn.discordapp.com/attachments/432342254770847745/980756480724725790/eight_col_cars.jpg" alt="stockimg5" style="width: 100%; margin: 1% 3% 1% 3%;">
+            <img class="img3" src="https://cdn.discordapp.com/attachments/432342254770847745/980756480942813214/istockphoto-988321834-612x612.jpg" alt="stockimg6" style="width: 100%; margin: 1% 3% 1% 3%;">
+        </div>
+    </div>
+</div>
+
+<br><br>
+
+        @if (SignInManager.IsSignedIn(User))
+            {
+                <h1>Here are some of our listings:</h1>
+                @foreach (var item in Model) {
+                <div class="carscolumn center">
+                <img class="center carimg img3" src="@Html.DisplayFor(modelItem => item.ImageLink)">
+                <div class="center">
+                Car Name: @Html.DisplayFor(modelItem => item.Name)
+                </div>
+                <div class="center">
+                Deposit Amount: @Html.DisplayFor(modelItem => item.DepositAmount)
+                </div>
+                <div class="center">
+                Automatic: @Html.DisplayFor(modelItem => item.IsAuto)
+                </div>
+                <div class="center">
+                <a asp-controller="BuyingCars" asp-action="Index" class="nav-link", style="text-align: center">Purchase</a>
+                </div>
+                </div>
+                }
+            }
+
+            else
+            {
+                <h1>Register or Log in to view our cars!!</h1>
+            }
+
+    <br><br><br><br>
+
+<div class="row2 nowrap">
+    <h1>
+        Our Staff
+    </h1>
+    <div style="white-space: nowrap;">
+        <div class="column2">
+            <img class="img2" src="https://media.istockphoto.com/photos/portrait-of-smiling-handsome-man-in-blue-tshirt-standing-with-crossed-picture-id1045886560?k=20&m=1045886560&s=612x612&w=0&h=JL8Dy_sRUXJo6PofsX7XkQpWjSTDhD8LuV071LMlb3Y=" alt="felix" style="width: 250px; height: 250px; object-fit: cover;">
+            <h2>
+                Felix
+            </h2>
+        </div>
+        <div class="column2">
+            <img class="img2" src="https://t4.ftcdn.net/jpg/01/15/85/23/360_F_115852367_E6iIYA8OxHDmRhjw7kOq4uYe4t440f14.jpg" alt="aaron" style="width: 250px; height: 250px; object-fit: cover;">
+            <h2>
+                Aaron
+            </h2>
+        </div>
+        <div class="column2">
+            <img class="img2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToOttchxavvyGpPMI44755my5B32teGxPSXg&usqp=CAU" alt="blake" style="width: 100%; height: 250px; object-fit: cover;">
+            <h2>
+                Blake
+            </h2>
+        </div>
+        <div class="column2">
+            <img class="img2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCtjwVDLsdRap5M1plK9P1KCUyw4Ik01Ca1w&usqp=CAU" alt="george" style="width: 100%; height: 250px; object-fit: cover;">
+            <h2>
+                George
+            </h2>
+        </div>
+    </div>
+
+    <a class="nav-item center">
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register", style="text-align: center">Click Here To Sign Up!!</a>
+    </a>
+</div>
+
+    </div>
+</body>

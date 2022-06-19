@@ -1,0 +1,149 @@
+﻿@model term2project.Models.Cars
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<style>
+
+footer{
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 1%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+h1 {
+    text-align: center;
+    text-decoration:underline;
+}
+
+h4 {
+    text-align: center;
+}
+
+p {
+    word-break: break-word;
+    text-align: center;
+}
+
+.column2 {
+    float: left;
+    width: 23%;
+    margin: 1%;
+}
+
+.row2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.img2 {
+    border-style: solid;
+    border-color: red;
+    border-radius: 50%;
+    animation-name: box;
+    animation-duration: 4s;
+}
+
+.img3 {
+    border-style: solid;
+    border-color: black;
+    border-radius: 10%;
+    width: 200px;
+    height: 200px;
+    animation-name: box;
+    animation-duration: 4s;
+}
+
+.carimg {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+body {
+    background-image:url(https://cdn.discordapp.com/attachments/432342254770847745/986393049355669524/cars.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    /*i changed the background up a bit to make it less harsh on the white but you can change it if you want heres the original: https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_13/2798361/190325-rental-cars-cs-229p.jpg - felix*/
+}
+
+.box {
+    background-color: whitesmoke;
+    border-style: solid;
+    border-color: red;
+    padding: 20px;
+    border-radius: 2%;
+    animation-name: box;
+    animation-duration: 1s;
+}
+
+@@-webkit-keyframes box {
+ from {opacity: 0;} 
+ to {opacity: 1;}
+}
+
+</style>
+
+<div class="box">
+
+<h1>Edit</h1>
+
+<hr />
+<div class="row center">
+    <div class="col-md-4 center">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger center"></div>
+            <input type="hidden" asp-for="ID" />
+            <div class="form-group center">
+                <label asp-for="Name" class="control-label center"></label>
+                <input asp-for="Name" class="form-control center" />
+                <span asp-validation-for="Name" class="text-danger center"></span>
+            </div>
+            <div class="form-group center">
+                <label asp-for="DepositAmount" class="control-label center"></label>
+                <input asp-for="DepositAmount" class="form-control center" />
+                <span asp-validation-for="DepositAmount" class="text-danger center"></span>
+            </div>
+            <div class="form-group form-check center">
+                <label class="form-check-label center">
+                    <input class="form-check-input" asp-for="IsAuto" /> @Html.DisplayNameFor(model => model.IsAuto)
+                </label>
+            </div>
+            <div class="form-group center">
+                <label asp-for="ImageLink" class="control-label center"></label>
+                <input asp-for="ImageLink" class="form-control center" />
+                <span asp-validation-for="ImageLink" class="text-danger center"></span>
+            </div>
+            <br>
+            <div class="form-group center">
+                <input type="submit" value="Save" class="btn btn-primary center" />
+            </div>
+        </form>
+    </div>
+</div>
+
+</div>

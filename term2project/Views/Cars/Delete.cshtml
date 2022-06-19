@@ -1,0 +1,149 @@
+﻿@model term2project.Models.Cars
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<style>
+
+    footer{
+    background-color: white;
+    position: absolute;
+    bottom: 0;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 1%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+h1 {
+    text-align: center;
+    text-decoration:underline;
+}
+
+h4 {
+    text-align: center;
+}
+
+p {
+    word-break: break-word;
+    text-align: center;
+}
+
+.column2 {
+    float: left;
+    width: 23%;
+    margin: 1%;
+}
+
+.row2:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.img2 {
+    border-style: solid;
+    border-color: red;
+    border-radius: 50%;
+    animation-name: box;
+    animation-duration: 4s;
+}
+
+.img3 {
+    border-style: solid;
+    border-color: black;
+    border-radius: 10%;
+    width: 200px;
+    height: 200px;
+    animation-name: box;
+    animation-duration: 4s;
+}
+
+.carimg {
+    width: 250px;
+    height: auto;
+    object-fit: cover;
+}
+
+body {
+    background-image:url(https://cdn.discordapp.com/attachments/432342254770847745/986393049355669524/cars.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    /*i changed the background up a bit to make it less harsh on the white but you can change it if you want heres the original: https://media-cldnry.s-nbcnews.com/image/upload/newscms/2019_13/2798361/190325-rental-cars-cs-229p.jpg - felix*/
+}
+
+.box {
+    background-color: whitesmoke;
+    border-style: solid;
+    border-color: red;
+    padding: 20px;
+    border-radius: 2%;
+    animation-name: box;
+    animation-duration: 1s;
+}
+
+@@-webkit-keyframes box {
+ from {opacity: 0;} 
+ to {opacity: 1;}
+}
+
+</style>
+
+<div class="box">
+
+<h1>Delete</h1>
+
+<h3 class="center">Are you sure you want to delete this car? This cannot be undone.</h3>
+<div>
+    <img class="center carimg img3" src="@Html.DisplayFor(model => model.ImageLink)">
+    <hr />
+    <dl class="row center">
+        <dt class = "col-sm-2 center">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10 center">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2 center">
+            @Html.DisplayNameFor(model => model.DepositAmount)
+        </dt>
+        <dd class = "col-sm-10 center">
+            @Html.DisplayFor(model => model.DepositAmount)
+        </dd>
+        <dt class = "col-sm-2 center">
+            @Html.DisplayNameFor(model => model.IsAuto)
+        </dt>
+        <dd class = "col-sm-10 center">
+            @Html.DisplayFor(model => model.IsAuto)
+        </dd>
+    </dl>
+    
+    <form class="center" asp-action="Delete">
+        <input class="center" type="hidden" asp-for="ID" />
+        <div class="center">
+        <input type="submit" value="Delete" class="btn btn-danger center" />
+        <a asp-action="Index">Cancel</a>
+        </div>
+    </form>
+</div>
+
+</div>
